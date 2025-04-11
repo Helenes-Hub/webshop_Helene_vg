@@ -13,18 +13,122 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+#cartReview {
+    margin-bottom: 2rem;
+    border-top: 2px solid #ddd;
+    padding-top: 1rem;
+    align-content: center;
+}
+
+.cart-header {
+    padding: 1rem 0;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+#cartTotal {
+    font-size: 1.1rem;
+    color: var(--deep-purple);
+}
+
+#clearCart {
+    margin-bottom: 1rem;
+}
+
+.cart-item {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    background-color: #fafafa;
+}
 
 .cart-item {
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    margin-bottom: 10px;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    gap: 0.5rem;
 }
+
 .cart-item img {
+    width: 80px;
+    height: auto;
     object-fit: contain;
+    margin-bottom: 0.5rem;
 }
+
+.cart-item p, .cart-item strong {
+    text-align: center;
+    margin: 0.2rem 0;
+}
+
+.checkoutFormCart {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fdfdfd;
+}
+
+.checkoutFormCart label {
+    font-weight: bold;
+    margin-bottom: 0.2rem;
+}
+
+.checkoutFormCart input {
+    padding: 6px 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+/* Submit button */
+#orderDone {
+    background-color: var(--accent-gold);
+    color: var(--deep-purple);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#orderDone:hover {
+    background-color: var(--accent-gold-hover);
+}
+
+/* Quantity + Remove buttons */
 .cart-item button {
-    margin-right: 5px;
+    padding: 4px 8px;
+    margin: 0.2rem;
+    font-size: 0.85rem;
+    background-color: var(--accent-gold);
+    color: var(--deep-purple);
+    border: 1px solid var(--deep-purple);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.cart-item button:hover {
+    background-color: var(--accent-gold-hover);
+}
+
+/* Total row */
+#cartReview > div:last-child {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 1rem;
 }
 
 .modal {

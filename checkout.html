@@ -13,14 +13,22 @@
     </div>
 </nav>
 
+<div class="d-flex justify-content-between align-items-center mb-3">
+
+
 <div class="container my-5">
+
     <h1 class="mb-4">Checkout</h1>
 
+    <h3 class="mb-3">Your Items</h3>
     <div id="cartReview"></div>
 
-    <form id= "checkoutForm" class="checkoutFormCart">
-        <h3>Customer Info</h3>
+    <div class="d-flex justify-content-between align-items-center mb-4" id="cartFooter" style="display: none;">
+        <span id="cartTotal" class="fw-bold fs-5">Total: 0.00€</span>
+        <button id="clearCart" class="btn btn-danger btn-sm">Clear Cart</button>
+    </div>
 
+    <form id="checkoutForm" class="checkoutFormCart">
         <label for="fullName">Full name</label>
         <input type="text" id="fullName" required placeholder="Ash Ketchum">
 
@@ -39,17 +47,17 @@
         <label for="phoneNumber">Phone number</label>
         <input type="tel" id="phoneNumber" required placeholder="019-1337">
 
-        <div class="discountCode">
-            <label for="discountCode">Discount Code</label>
-            <input type="text" id="discountCode" placeholder="Enter your discount code">
+        <label for="discountCode">Discount Code</label>
+        <div style="display: flex; gap: 0.5rem;">
+            <input type="text" id="discountCode" placeholder="Enter your discount code" style="flex: 1;">
             <button type="button" id="applyDiscount">Apply</button>
-            <div id="discountError" class="text-danger" style="display: none;"></div>
         </div>
+        <div id="discountError" class="text-danger" style="display: none;"></div>
 
         <button type="submit" id="orderDone">Submit Order</button>
     </form>
+    </div>
 </div>
-
 <script src="checkout.js"></script>
 <script src="formValidation.js"></script>
 </body>

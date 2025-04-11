@@ -77,6 +77,16 @@ function addCartListeners() {
     });
 }
 
+function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+    const counter = document.getElementById("cartCount");
+    if (counter) {
+        counter.textContent = count;
+    }
+}
+
 function addToCart(product) {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -90,6 +100,7 @@ function addToCart(product) {
 
     localStorage.setItem("cart", JSON.stringify(cart));
     alert("Added to cart!");
+    updateCartCount();
 }
 
 //Tar emot produkterna i json-format och skapar upp kort med produkt-egenskaper
@@ -274,6 +285,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(product => displayProductDetails(product, productDetailsContainer))
             .catch(err => console.error(err));
     }
+    updateCartCount();
 });
 
 
@@ -301,3 +313,4 @@ function displayProductDetails(product, container) {
     addCheckOutListeners();
     addCartListeners()
 }
+
