@@ -1,0 +1,358 @@
+@charset "UTF-8";
+/* Import av Montserrat, Open Sans och Raleway-font*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&family=Raleway:wght@300;700&display=swap');
+
+/*!
+* Start Bootstrap - Shop Homepage v5.0.6 (https://startbootstrap.com/template/shop-homepage)
+* Copyright 2013-2023 Start Bootstrap
+* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-shop-homepage/blob/master/LICENSE)
+*/
+/*!
+ * Bootstrap  v5.2.3 (https://getbootstrap.com/)
+ * Copyright 2011-2022 The Bootstrap Authors
+ * Copyright 2011-2022 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ */
+
+.cart-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+.cart-item img {
+    object-fit: contain;
+}
+.cart-item button {
+    margin-right: 5px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 50, 0.5);
+}
+.modal-content {
+    background: white;
+    padding: 20px;
+    width: 50%;
+    max-width: 500px;
+    margin: 15% auto;
+    height: auto;
+    border-radius: 10px;
+    position: relative;
+}
+
+.modal-content h3 {
+    font-size: 45px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.checkoutForm {
+    display: contents;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.checkoutFormCart{
+
+
+}
+
+.hidden-egg {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    opacity: 0.1;
+    transition: opacity 0.5s ease-in-out;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+#egg1:hover, #egg2:hover, #egg3:hover, #egg4:hover, #egg5:hover, #egg6:hover {
+    opacity: 1;
+}
+
+#egg1 { top: 200%; left: 5vw; }
+#egg2 { top: 120%; right: 10vw; }
+#egg3 { bottom: 1%; left: 10vw; }
+#egg4 { top: 160%; right: 33vw; }
+#egg5 { top: 1%; right: 15vw; }
+#egg6 { top: 80%; left: 50vw; }
+
+
+@media (max-width: 768px) {
+    #egg1 { top: 150%; left: 5vw; }
+    #egg2 { top: 55%; right: 10vw; }
+    #egg3 { bottom: 10%; left: 5vw; }
+    #egg4 { bottom: 15%; right: 15vw; }
+    #egg5 { top: 30%; right: 40vw; }
+    #egg6 { top: 265%; left: 65vw; }
+}
+
+#eggCounter {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+#orderDone {
+    margin: 20px;
+    border-radius:5px;
+
+}
+::placeholder {
+    font-style: italic;
+}
+
+#orderDone:hover
+{background-color: #72d386}
+
+.card {
+    height: 28rem;
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem;
+    border: 1px solid #f0e6ff;
+    box-shadow: 0 4px 15px rgba(196, 181, 232, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-img-top {
+    object-fit: contain;
+    height: 170px;
+    width: auto;
+    max-width: 90%;
+}
+
+.card-container-img{
+    height: 190px;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+.card-body {
+    height: 150px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 0.5rem;
+}
+
+.product-title {
+    min-height: 2.8rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+}
+
+#productDetails h1.display-5 {
+    overflow: visible;
+    text-overflow: clip;
+    display: block;
+    min-height: auto;
+    word-wrap: break-word;
+    white-space: normal;
+    font-size: 35px;
+}
+
+.card-footer {
+    padding: 0 1rem 1rem;
+}
+
+.price {
+    margin-top: auto;
+    margin-bottom: 5px;
+}
+
+.product-description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    margin-bottom: 5px;
+}
+
+.header{
+    display: flex !important;
+    justify-content: center !important;
+    height: 100px;
+
+}
+
+.header img{
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit:cover !important;
+    object-position: center !important;;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+
+.selected-product {
+    text-align: center;
+}
+
+.selected-product p {
+    margin: 0;
+    padding: 0;
+}
+
+.discountCode {
+    padding: 10px;
+}
+
+.new-price {
+    color: red;
+    margin-bottom: 5px;
+}
+html, body{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+body > *:not(footer){
+    flex: 1; /* gör att footern stannar nere när sidan scrollas*/
+}
+
+.footer{
+    position: relative !important; /*sätter sig i relation till närmsta positionering*/
+    width: 100% !important;
+    line-height: 0; /*tar bort extra utrymme under footern*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #b19cd9; /*lavender backup*/
+}
+.footer-image{
+    width: 100%;
+    display: block;
+    margin: 0;
+    padding: 0;
+
+}
+
+footer .container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white !important;
+    padding: 10px 0;
+    background: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/*färgskala*/
+:root {
+    --lightgrey-bg: #d3d3d3;           /* bakgrund */
+    --accent-gold: #F1D789;       /* knappfärg */
+    --accent-gold-hover: #FFE6A7; /* hover-state på knapp*/
+    --deep-purple: #6B5B95;       /* text och mörkare detaljer */
+    --dark-text: #2A2438;         /* huvud-textfärgen */
+    --white: #FFFFFF;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--dark-text);
+    line-height: 1.6;
+
+}
+
+.navbar {
+    background-color: var(--deep-purple) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand, .nav-link {
+    color: var(--white) !important;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(196, 181, 232, 0.25);
+}
+
+.card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: var(--deep-purple);
+}
+
+/*Buy & Lets shop-knapp*/
+.shopPress.btn, .checkoutPress.btn {
+    background-color: var(--accent-gold) !important;
+    color: var(--deep-purple) !important;
+    border: none !important;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.shopPress.btn:hover, .checkoutPress.btn:hover {
+    background-color: var(--accent-gold-hover) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+#eggCounter {
+    background-color: var(--accent-gold);
+    color: var(--deep-purple);
+    border-radius: 4px;
+    padding: 7px 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border: none !important;
+}
+
+#eggCounter:hover {
+    background-color: var(--accent-gold-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+/*ändrar relationen mellan banner och cards*/
+section {
+    margin-top: -40px;
+}
