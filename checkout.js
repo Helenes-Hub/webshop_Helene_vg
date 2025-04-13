@@ -1,5 +1,6 @@
 
 let appliedDiscount = 0;
+
 function updateCartUI() {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     const cartReview = document.getElementById("cartReview");
@@ -13,7 +14,7 @@ function updateCartUI() {
     if (cart.length === 0) {
         cartFooter.style.display = "none";
         formContainer.style.display = "none";
-        cartReview.innerHTML = `<p>Your cart is empty. Go back and add some treasures!</p>`;
+        cartReview.innerHTML = `<p>Your cart is empty. Go back and add some items!</p>`;
         return;
     }
 
